@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: managingUsers
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 337219064761-ti8jmshhade4lv4ttvnc44h95q19l03f.apps.googleusercontent.com
+            client-secret: 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
+            scope: profile, email
+            redirect-uri: "http://localhost:8080/login/oauth2/code/google"
+
+          facebook:
+            client-id: 656319144052796  # <-- nhập App ID Facebook ở đây
+            client-secret: a9017363030c52561d5fa2555166cd06  # <-- nhập App Secret ở đây
+            scope: public_profile, email
+            redirect-uri: "http://localhost:8080/login/oauth2/code/facebook"
+            client-name: Facebook
+
+
+  datasource:
+    url: jdbc:mysql://localhost:3308/managingUsers?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+
+  jpa:
+    hibernate:
+      ddl_auto: update
+    show-sql: true
+
+    properties:
+      hibernate:
+        dialect:  org.hibernate.dialect.MySQL8Dialect
+
+jwt:
+  signerKey: "kyKbAhOH4ZFjq06U09hQIstsmysVZDfbphsnihPvp6B6w0JQgQUWn2ZpXS1BVMAD"
+  valid-duration: 55 #in second
+  refreshable-duration: 120 #in seconds
+
+  #cau hinh moi truong bien dich dev
+  profiles:
+    active: dev
