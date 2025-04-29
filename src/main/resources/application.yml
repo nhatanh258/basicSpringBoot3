@@ -7,14 +7,14 @@ spring:
       client:
         registration:
           google:
-            client-id: 337219064761-ti8jmshhade4lv4ttvnc44h95q19l03f.apps.googleusercontent.com
-            client-secret: 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
+#            client-id: 337219064761-ti8jmshhade4lv4ttvnc44h95q19l03f.apps.googleusercontent.com
+#            client-secret: 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
             scope: profile, email
             redirect-uri: "http://localhost:8080/login/oauth2/code/google"
 
           facebook:
-            client-id: 656319144052796  # <-- nhập App ID Facebook ở đây
-            client-secret: a9017363030c52561d5fa2555166cd06  # <-- nhập App Secret ở đây
+#            client-id: 656319144052796  # <-- nhập App ID Facebook ở đây
+#            client-secret: a9017363030c52561d5fa2555166cd06  # <-- nhập App Secret ở đây
             scope: public_profile, email
             redirect-uri: "http://localhost:8080/login/oauth2/code/facebook"
             client-name: Facebook
