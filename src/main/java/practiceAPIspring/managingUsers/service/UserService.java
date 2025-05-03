@@ -44,7 +44,8 @@ public class UserService {
     @Transactional(readOnly = true)
     public List<UserResponse> getAll() {
         try {
-            return this.userRepo.findAll().stream().map(
+            var listUsers = this.userRepo.findAll();
+            return listUsers.stream().map(
                     userRespon -> new UserMapper(roleMapper).toUserResponse(userRespon)
             ).collect(Collectors.toList());
         } catch (Exception e) {

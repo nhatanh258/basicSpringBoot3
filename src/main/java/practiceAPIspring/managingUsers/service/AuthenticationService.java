@@ -22,7 +22,7 @@ import practiceAPIspring.managingUsers.dto.request.comonRequest.IntrospectReques
 import practiceAPIspring.managingUsers.dto.request.comonRequest.RefreshRequest;
 import practiceAPIspring.managingUsers.dto.response.comonResponse.AuthenticationResponse;
 import practiceAPIspring.managingUsers.dto.response.comonResponse.IntrospectResponse;
-import practiceAPIspring.managingUsers.dto.response.comonResponse.logoutRequest;
+import practiceAPIspring.managingUsers.dto.request.comonRequest.logoutRequest;
 import practiceAPIspring.managingUsers.model.InvalidToken;
 import practiceAPIspring.managingUsers.model.User;
 import practiceAPIspring.managingUsers.repository.InvalidTokenRepo;

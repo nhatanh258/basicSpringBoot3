@@ -1,4 +1,4 @@
-package practiceAPIspring.managingUsers.dto.response.comonResponse;
+package practiceAPIspring.managingUsers.dto.request.comonRequest;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -20,12 +20,11 @@ import java.util.UUID;
 public class PermissionService {
     private final PermissionRepo permissionRepository;
     private final PermissionMapper permissionMapper;
+
     public PermissionResponse create(PermissionRequest request){
         Permission permission = permissionMapper.toPermission(request);
         permission = permissionRepository.save(permission);
-        System.out.println("xxx1 "+permission.getRole());
         PermissionResponse as = permissionMapper.toPermissionResponse(permission);
-        System.out.println("xxx2 "+as.getRole());
         return  as;
     }
 

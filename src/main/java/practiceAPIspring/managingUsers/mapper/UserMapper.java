@@ -19,19 +19,19 @@ public class UserMapper {
 
     public UserResponse toUserResponse(User user){// map tu user sang useresponse
 
-        System.out.println("==> Danh sách roles:");
-        user.getRoles().forEach(r -> System.out.println("Role: " + r.getDescription()));
+//        System.out.println("==> Danh sách roles:");
+//        user.getRoles().forEach(r -> System.out.println("Role: " + r.getDescription()));
 
         Set<RoleResponse> roleResponses = user.getRoles().stream()
                 .map(role -> {
-                    System.out.println("Mapping role: " + role.getName());
-                    System.out.println("Mapping role: " + role.getDescription());
-                    System.out.println("Mapping role: " + role.getPermissions());
+//                    System.out.println("Mapping role: " + role.getName());
+//                    System.out.println("Mapping role: " + role.getDescription());
+//                    System.out.println("Mapping role: " + role.getPermissions());
                     RoleResponse response = roleMapper.toRoleResponse(role);
-                    System.out.println("Response : "+ response.getName());//null-->
-                    System.out.println("Response : "+ response.getDescription());
-                    response.getPermissions().forEach(s ->
-                            System.out.println("xx " + s.getDescription()));
+//                    System.out.println("Response : "+ response.getName());//null-->
+//                    System.out.println("Response : "+ response.getDescription());
+//                    response.getPermissions().forEach(s ->
+//                            System.out.println("xx " + s.getDescription()));
 
                     if (response == null) {
                         System.out.println("⚠️ toRoleResponse trả về null cho role: " + role.getName());

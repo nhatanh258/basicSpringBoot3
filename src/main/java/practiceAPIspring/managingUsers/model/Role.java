@@ -2,10 +2,7 @@ package practiceAPIspring.managingUsers.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.util.List;
@@ -18,6 +15,7 @@ import java.util.UUID;
 @Table(name = "role")
 @Getter
 @Setter
+@Builder
 public class Role {
     @Id
     @GeneratedValue(generator = "uuid2")
@@ -43,5 +41,8 @@ public class Role {
     @ManyToMany(mappedBy = "roles", fetch = FetchType.EAGER)
     @JsonIgnore
     private List<User> users;
-
+    @Override
+    public String toString() {
+        return "Role(id=" + id + ", name=" + name + ", description=" + description + ")";
+    }
 }

@@ -2,17 +2,7 @@ package practiceAPIspring.managingUsers.controller;
 
 
 import com.nimbusds.jose.JOSEException;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.core.user.OAuth2User;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +14,7 @@ import practiceAPIspring.managingUsers.dto.request.comonRequest.RefreshRequest;
 import practiceAPIspring.managingUsers.dto.response.comonResponse.AuthenticationResponse;
 import practiceAPIspring.managingUsers.dto.response.comonResponse.IntrospectResponse;
 import practiceAPIspring.managingUsers.dto.response.comonResponse.ResponseObject;
-import practiceAPIspring.managingUsers.dto.response.comonResponse.logoutRequest;
+import practiceAPIspring.managingUsers.dto.request.comonRequest.logoutRequest;
 
 import practiceAPIspring.managingUsers.service.AuthenticationService;
 
@@ -39,7 +29,7 @@ public class AuthenticationController  {
     private  final AuthenticationService authenticationService;
 
 
-    @PostMapping("/login")
+    @PostMapping("/auth/login")
     ResponseObject<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request) {
         return new ResponseObject<>(StatusMessage.LOGINS, authenticationService.authenticate(request)) ;
     }
